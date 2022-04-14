@@ -1,6 +1,6 @@
 /* eslint no-underscore-dangle: 0 */
 /* eslint max-classes-per-file: ["error", 2] */
-class HolbertonClass {
+export class HolbertonClass {
   constructor(year, location) {
     this._year = year;
     this._location = location;
@@ -15,7 +15,7 @@ class HolbertonClass {
   }
 }
 
-class StudentHolberton {
+export class StudentHolberton {
   constructor(firstName, lastName, holbertonClass) {
     this._firstName = firstName;
     this._lastName = lastName;
