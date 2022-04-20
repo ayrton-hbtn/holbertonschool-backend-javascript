@@ -4,21 +4,23 @@ export default function cleanSet(set, startString) {
     throw new TypeError('set must be of type Set');
   }
   let returnStr = '';
-  if (startString.length === 0) {
+  if (typeof (startString) === 'undefined' || startString.length === 0) {
     return returnStr;
   }
   if (typeof (startString) !== 'string') {
     throw new TypeError('startString must be of type String');
   }
   for (const str of set) {
-    if (typeof (str) !== 'string') {
-      throw new TypeError('set must contain strings only');
-    }
-    if (str.startsWith(startString)) {
-      if ((str.slice(startString.length)).length === 0) {
-        continue;
+    if (typeof (str) !== 'undefined') {
+      if (typeof (str) !== 'string') {
+        throw new TypeError('set must contain strings only');
       }
-      returnStr += `${str.slice(startString.length)}-`;
+      if (str.startsWith(startString)) {
+        if ((str.slice(startString.length)).length === 0) {
+          continue;
+        }
+        returnStr += `${str.slice(startString.length)}-`;
+      }
     }
   }
   if (returnStr.charAt(0) === '-') {
