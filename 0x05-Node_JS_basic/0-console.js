@@ -1,5 +1,9 @@
+/**
+ *
+ * @param {string} argument
+ */
 function displayMessage(argument) {
-    process.stdout.write(argument + '\n');
+  process.stdout.write(argument + '\n');
 }
 
 module.exports = displayMessage;
